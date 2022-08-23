@@ -49,6 +49,13 @@
 </progress>
 <hr>
 <input type="number" [value]="alto" (input)="capturarAlto($event)">
-<input type="number" value="ancho" (input)="capturarAncho($event)">
+<input type="number" value="ancho" (input)="capturarAncho($event)"><br>
 <img [src]="imagen" [height]="alto" [width]="ancho">
+<h1>  NGClass y NGstyle</h1>
+<p>boton para cambiar clase</p>
+<button (click)="mostrar = !mostrar" [class.rojo]="mostrar"
+[class.grande]="mostrar"
+>Cambiar clase</button>
+{{ mostrar }}
 
+<h1 [class.ocultar]="mostrar">Mensaje secreto</h1>
