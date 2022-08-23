@@ -49,13 +49,34 @@
 </progress>
 <hr>
 <input type="number" [value]="alto" (input)="capturarAlto($event)">
-<input type="number" value="ancho" (input)="capturarAncho($event)"><br>
+<input type="number" [value]="ancho" (input)="capturarAncho($event)"><br>
 <img [src]="imagen" [height]="alto" [width]="ancho">
+
+
 <h1>  NGClass y NGstyle</h1>
 <p>boton para cambiar clase</p>
-<button (click)="mostrar = !mostrar" [class.rojo]="mostrar"
-[class.grande]="mostrar"
+<button (click)="mostrar = !mostrar"
+[ngClass]="{
+  rojo:mostrar,
+  grande:mostrar
+}"
 >Cambiar clase</button>
 {{ mostrar }}
 
-<h1 [class.ocultar]="mostrar">Mensaje secreto</h1>
+<h1 [ngClass]="{ocultar:mostrar}">Mensaje secreto</h1>
+
+<h2 [ngStyle]="{
+  'color': color,
+  'font-size.px': ancho
+  }">Hola soy un h2 con estilos</h2>
+
+<input type="color" [value]="color" (change)="capturarColor($event)">
+<!--Cerrando las bases minimas de angular-->
+
+<app-prueba titulo="'hola desde padre'"></app-prueba>
+
+<app-prueba></app-prueba>
+
+<app-prueba></app-prueba>
+
+<app-prueba></app-prueba>
